@@ -10,6 +10,7 @@ module.exports = {
       'custom': {
         'blue': '#0A1FD9',
         'yellow': '#FFD900',
+        'pink': '#F82462',
       }
     },
     extend: {},
