@@ -3,9 +3,9 @@
     <div>
       <div class="justify-center items-center">
         <div class="flex justify-center items-center select-none bg-custom-pink text-white text-xl font-bold p-4 m-4 rounded-full h-16 w-16">
-          <Camera class="m-auto w-2/3" v-if="timerCount=5"/>
+          <Camera  v-if="timerStarted===false" class="m-auto w-2/3"/>
+          <span v-if="timerStarted===true" class="text-2xl text-white font-bold" v-bind="this.timerCount">{{this.timerCount}}</span>
         </div>
-          <span v-if="timerStarted=true" class="text-2xl">{{ timerCount }}</span>
       </div>
     </div>
   </button>
@@ -19,24 +19,23 @@ export default defineComponent({
   },
   data() {
     return {
-      timerCount: 5,
-      timeStarted:false
+      timerStarted:false
     }
   },
   methods:{
-    startCounter() {
-      this.timeStarted = true;
+    startCounter(){
+      this.timerStarted = true;
+      this.timerCount = 5;
       this.timer = setInterval(() => {
         this.timerCount--;
-        if (this.timerCount === 0) {
-          this.takePhoto();
+        console.log(this.timerCount)
+        if(this.timerCount===0){
+          this.timerStarted = false;
           clearInterval(this.timer);
+          return this.$emit('takePhotoEvent');
         }
       }, 1000);
-    },
-    takePhoto(){
-      console.log("aze")
-    },
+    }
   }
 })
 </script>
