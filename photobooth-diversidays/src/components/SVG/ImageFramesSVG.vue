@@ -1,5 +1,5 @@
 <template>
-<svg width="110" height="112" viewBox="0 0 110 112" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg :width="width" :height="height" viewBox="0 0 110 112" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g filter="url(#filter0_d_165_6682)">
 <rect x="60.71" y="4" width="46.0729" height="73.4495" transform="rotate(9.46998 60.71 4)" fill="white"/>
 </g>

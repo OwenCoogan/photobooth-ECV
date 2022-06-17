@@ -1,16 +1,14 @@
 <template>
-  <div class="web-camera-container relative h-screen  ">
-
+  <div class="web-camera-container relative h-screen w-auto overflow-hidden">
   <div class="camera-box" :class="{ 'flash' : isShotPhoto }">
     <div class="camera-shutter" :class="{'flash' : isShotPhoto}"></div>
-    <video v-show="!isPhotoTaken" ref="camera" autoplay></video>
+    <video v-show="!isPhotoTaken" ref="camera" autoplay class="absolute min-w-auto min-h-full max-w-none" :style="{left}"></video>
     <canvas v-show="isPhotoTaken" id="photoTaken" ref="canvas" :width="450" :height="337.5"></canvas>
   </div>
 
   <div v-if="!isPhotoTaken"  class="camera-shoot">
-    <Counter @takePhotoEvent="takePhoto"/>
+    <Counter @takePhotoEvent="takePhoto" class=" counter-alignement"/>
   </div>
-
   <div v-if="isPhotoTaken" class="camera-download absolute bottom-0 left-1/2">
 
     <a id="downloadPhoto" download="my-photo.jpg" class="button" role="button" @click="downloadImage">
@@ -34,7 +32,8 @@ export default {
       isPhotoTaken: false,
       isShotPhoto: false,
       isLoading: false,
-      link: '#'
+      link: '#',
+      left: '-70%',
     }
   },
   components: {
