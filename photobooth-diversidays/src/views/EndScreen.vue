@@ -12,30 +12,31 @@
       </h2>
     </div>
     <div class="px-10">
-      <ImageFramesSVG :width="'100%'" :height="'100%'" class="p-14"/>
+      <ImageFramesCustomSVG :width="'100%'" :height="'100%'" class="p-20 pt-0" :image="this.$route.query.image"/>
       <p class="text-white">
-        Participez à notre grande mosaïque photos de la diversité !
+        Rendez-vous le 5 décembre
+        à la villette !
       </p>
-      <router-link class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded block w-1/2 m-auto my-3" to="/Webcam">
-        <p class="block w-full m-auto text-center">
-        C’est parti
-        <Camera class="mx-1 w-4 inline" />
-        </p>
-      </router-link>
     </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
   import UniqueLogo from '../components/SVG/UniqueLogo.vue'
   import ImageFramesSVG from '../components/SVG/ImageFramesSVG.vue'
   import Camera from '../components/SVG/Camera.vue'
+  import ImageFramesCustomSVG from '../components/SVG/ImageFramesCustomSVG.vue'
 export default {
   components: {
     UniqueLogo,
     ImageFramesSVG,
+    ImageFramesCustomSVG,
     Camera
-  }
+  },
 }
 </script>
+
+<style>
+
+</style>

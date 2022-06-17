@@ -3,20 +3,19 @@
   <div class="camera-box" :class="{ 'flash' : isShotPhoto }">
     <div class="camera-shutter" :class="{'flash' : isShotPhoto}"></div>
     <video v-show="!isPhotoTaken" ref="camera" autoplay class="absolute min-w-auto min-h-full max-w-none" :style="{left}"></video>
-    <canvas v-show="isPhotoTaken" id="photoTaken" ref="canvas" :width="450" :height="337.5"></canvas>
+    <canvas v-show="isPhotoTaken" id="photoTaken" class="absolute min-w-auto min-h-full max-w-none" ref="canvas" :width="450" :height="337.5" :style="{left}"></canvas>
   </div>
 
   <div v-if="!isPhotoTaken"  class="camera-shoot">
     <Counter @takePhotoEvent="takePhoto" class=" counter-alignement"/>
   </div>
-  <div v-if="isPhotoTaken" class="camera-download absolute bottom-0 left-1/2">
-
-    <a id="downloadPhoto" download="my-photo.jpg" class="button" role="button" @click="downloadImage">
-      Download
-    </a>
-    <a id="downloadPhoto" download="my-photo.jpg" class="button" role="button" @click="revert">
-      Retake Picture
-    </a>
+  <div v-if="isPhotoTaken" class="camera-download absolute bottom-10 left-1/2 buttons-alignement flex">
+    <router-link :to="`/EndScreen?image=${canvas}`"  id="downloadPhoto" download="my-photo.jpg" class="text-white bg-custom-pink hover:text-white focus:ring-4 focus:outline-nonefont-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 w-3/4" role="button" @click="downloadImage">
+      <p class="w-full block text-center px-24">Valider</p>
+    </router-link>
+    <button type="button" @click="revert" class="text-custom-pink border bg-white border-custom-pink hover:bg-custom-pink hover:text-white focus:ring-4 focus:outline-nonefont-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2">
+      <Revert/>
+  </button>
   </div>
 </div>
 
@@ -25,6 +24,7 @@
 <script>
 import Camera from '../components/SVG/Camera.vue'
 import Counter from '../components/Counter.vue'
+import Revert from '../components/SVG/Revert.vue'
 export default {
   data() {
     return {
@@ -34,11 +34,13 @@ export default {
       isLoading: false,
       link: '#',
       left: '-70%',
+      canvas:null,
     }
   },
   components: {
     Camera,
-    Counter
+    Counter,
+    Revert
   },
   mounted() {
     console.log('sup')
@@ -90,6 +92,8 @@ export default {
 
       const context = this.$refs.canvas.getContext('2d');
       context.drawImage(this.$refs.camera, 0, 0, 450, 337.5);
+      this.link = this.$refs.canvas.toDataURL('image/jpeg');
+      this.canvas = document.getElementById("photoTaken").toDataURL("image/jpeg");
     },
 
     revert(){
