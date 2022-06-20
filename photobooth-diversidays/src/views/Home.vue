@@ -36,6 +36,11 @@ export default {
     UniqueLogo,
     ImageFramesSVG,
     Camera
+  },
+  setup: () => {
+    if(localStorage.getItem('current_image')){
+      localStorage.removeItem('current_image');
+    }
   }
 }
 </script>

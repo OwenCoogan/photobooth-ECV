@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   base: process.env.IS_DEV !== 'true' ? './' : '/',
   build: {
-    outDir: 'app/build',
+    outDir: 'public',
   },
   plugins: [vue()]
 })

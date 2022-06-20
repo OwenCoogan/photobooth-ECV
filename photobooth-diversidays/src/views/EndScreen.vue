@@ -12,7 +12,7 @@
       </h2>
     </div>
     <div class="px-10">
-      <ImageFramesCustomSVG :width="'100%'" :height="'100%'" class="p-20 pt-0" :image="this.$route.query.image"/>
+      <ImageFramesCustomSVG :width="'100%'" :height="'100%'" class="p-20 pt-0" :image="this.image"/>
       <p class="text-white">
         Rendez-vous le 5 décembre
         à la villette !
@@ -34,6 +34,11 @@ export default {
     ImageFramesCustomSVG,
     Camera
   },
+  data() {
+    return {
+      image: localStorage.getItem("current_image")
+    }
+  }
 }
 </script>
 
