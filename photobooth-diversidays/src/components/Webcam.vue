@@ -46,7 +46,6 @@ export default {
     UniqueLogoBlue,
   },
   mounted() {
-    console.log('sup')
     this.toggleCamera()
   },
   methods: {
@@ -97,7 +96,6 @@ export default {
       context.drawImage(this.$refs.camera, 0, 0, 450, 337.5);
       this.link = this.$refs.canvas.toDataURL('image/jpeg');
       this.canvas = document.getElementById("photoTaken").toDataURL("image/jpeg");
-      console.log(this.canvas)
       localStorage.setItem("current_image", this.canvas)
     },
 

@@ -12,13 +12,17 @@
       </h2>
     </div>
     <div class="px-10">
-      <ImageFramesCustomSVG :width="'100%'" :height="'100%'" class="p-20 pt-0" :image="this.image"/>
-      <p class="text-white">
+      <ImageFramesCustomSVG :width="'100%'" :height="'100%'" class="px-20 py-8" :image="this.image"/>
+      <p class="text-white subtitle-end-screen">
         Rendez-vous le 5 décembre
         à la villette !
       </p>
     </div>
     </div>
+    <div class="flex px-10">
+        <Flashcode class="w-1/2 ml-0"/>
+        <img src="../assets/diversidays.png" class="w-1/4 m-auto mr-2 p-4"/>
+      </div>
   </div>
 </template>
 
@@ -27,12 +31,14 @@
   import ImageFramesSVG from '../components/SVG/ImageFramesSVG.vue'
   import Camera from '../components/SVG/Camera.vue'
   import ImageFramesCustomSVG from '../components/SVG/ImageFramesCustomSVG.vue'
+  import Flashcode from '../components/UI/Flashcode.vue'
 export default {
   components: {
     UniqueLogo,
     ImageFramesSVG,
     ImageFramesCustomSVG,
-    Camera
+    Camera,
+    Flashcode
   },
   data() {
     return {

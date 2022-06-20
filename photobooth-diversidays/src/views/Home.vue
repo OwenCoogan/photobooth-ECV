@@ -22,6 +22,10 @@
         <Camera class="mx-1 w-4 inline" />
         </p>
       </router-link>
+      <div class="flex">
+        <Flashcode class="w-1/2 ml-0"/>
+        <img src="../assets/diversidays.png" class="w-1/4 m-auto mr-2 p-4"/>
+      </div>
     </div>
     </div>
   </div>
@@ -31,12 +35,15 @@
   import UniqueLogo from '../components/SVG/UniqueLogo.vue'
   import ImageFramesSVG from '../components/SVG/ImageFramesSVG.vue'
   import Camera from '../components/SVG/Camera.vue'
+  import Flashcode from '../components/UI/Flashcode.vue'
+undefined
 export default {
   components: {
     UniqueLogo,
     ImageFramesSVG,
-    Camera
-  },
+    Camera,
+    Flashcode
+},
   setup: () => {
     if(localStorage.getItem('current_image')){
       localStorage.removeItem('current_image');

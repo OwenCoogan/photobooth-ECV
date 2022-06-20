@@ -1,9 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
 
 @font-face {
   font-family: "DinPro-Regular";
@@ -43,4 +41,11 @@ a p{
 
 .btn-home{
   width:40%;
+}
+
+.subtitle-end-screen{
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+  text-align:center;
+  font-size:22px;
 }
