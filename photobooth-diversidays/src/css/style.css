@@ -2,29 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Arista-Bold";
-  src: local("Arista-Bold"),   url(../fonts/Arista-Pro-Bold-trial.ttf) format("truetype");
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
 @font-face {
   font-family: "DinPro-Regular";
-  src: local("DinPro-Regular"),   url(../fonts/DINPro.ttf) format("truetype");
+  src: local("DinPro-Regular"),url(../fonts/DINPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "DinPro-Bold";
+  src: local("DinPro-Bold"),url(../fonts/DINPro.ttf) format("truetype");
 }
 p{
-  font-family: "DinPro-Regular";
+  font-family: 'Rubik', sans-serif;
+  font-weight:400;
+}
+.subtitle-home{
+  font-size:24px;
+  text-align: center;
 }
 
+a p{
+  font-family: 'DINPro-Regular', sans-serif;
+  font-weight:bold;
+}
 .home-title{
-  font-family: "Arista-Bold";
+  font-family: 'Rubik', sans-serif;
+  font-weight:600;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
   text-align: center;
-  margin-bottom: 1rem;
 }
 
 .buttons-alignement,.counter-alignement{
   left:50%;
   transform:translateX(-50%);
+}
+
+.btn-home{
+  width:40%;
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="container bg-custom-blue">
     <div>
-      <div class="header my-6">
+      <div class="header mt-6">
       <UniqueLogo :width="'100%'" :height="'100%'" :padding="'50px'"/>
       <h2 class="text-white px-10 home-title">
         Déconstruire les préjugés pour
