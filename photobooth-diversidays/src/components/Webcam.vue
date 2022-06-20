@@ -1,6 +1,6 @@
 <template>
   <div class="web-camera-container relative h-screen w-auto overflow-hidden">
-    <UniqueLogo :width="'100%'" :height="'100%'" :padding="'50px'" class="absolute z-50"/>
+    <UniqueLogoBlue :width="'100%'" :height="'100%'" :padding="'50px'" class="absolute z-50"/>
   <div class="camera-box" :class="{ 'flash' : isShotPhoto }">
     <div class="camera-shutter" :class="{'flash' : isShotPhoto}"></div>
     <video v-show="!isPhotoTaken" ref="camera" autoplay class="absolute min-w-auto min-h-full max-w-none" :style="{left}"></video>
@@ -26,7 +26,7 @@
 import Camera from '../components/SVG/Camera.vue'
 import Counter from '../components/Counter.vue'
 import Revert from '../components/SVG/Revert.vue'
-import UniqueLogo from '../components/SVG/UniqueLogo.vue'
+import UniqueLogoBlue from '../components/SVG/UniqueLogoBlue.vue'
 export default {
   data() {
     return {
@@ -43,7 +43,7 @@ export default {
     Camera,
     Counter,
     Revert,
-    UniqueLogo,
+    UniqueLogoBlue,
   },
   mounted() {
     console.log('sup')
