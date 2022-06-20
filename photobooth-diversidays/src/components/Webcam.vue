@@ -10,7 +10,7 @@
     <Counter @takePhotoEvent="takePhoto" class=" counter-alignement"/>
   </div>
   <div v-if="isPhotoTaken" class="camera-download absolute bottom-10 left-1/2 buttons-alignement flex">
-    <router-link :to="`/EndScreen?image=${canvas}`"  id="downloadPhoto" download="my-photo.jpg" class="text-white bg-custom-pink hover:text-white focus:ring-4 focus:outline-nonefont-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 w-3/4" role="button" @click="downloadImage">
+    <router-link :to="'/EndScreen'"  id="downloadPhoto" download="my-photo.jpg" class="text-white bg-custom-pink hover:text-white focus:ring-4 focus:outline-nonefont-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 w-3/4" role="button" @click="downloadImage">
       <p class="w-full block text-center px-24">Valider</p>
     </router-link>
     <button type="button" @click="revert" class="text-custom-pink border bg-white border-custom-pink hover:bg-custom-pink hover:text-white focus:ring-4 focus:outline-nonefont-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2">
