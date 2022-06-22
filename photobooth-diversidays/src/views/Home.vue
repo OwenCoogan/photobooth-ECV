@@ -12,11 +12,11 @@
       </h2>
     </div>
     <div class="px-10">
-      <ImageFramesSVG :width="'100%'" :height="'100%'" class="p-10"/>
+       <img src="../assets/screen_homepage_image_2x.png" class="p-10"/>
       <p class="text-white subtitle-home">
         Participez à notre grande mosaïque photos de la diversité !
       </p>
-      <router-link class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded block w-1/3 m-auto my-3 text-xl btn-home" to="/Webcam">
+      <router-link class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded block w-1/3 m-auto my-3 text-xl btn-home" to="/CGU">
         <p class="block w-full m-auto text-center">
         C’est parti
         <Camera class="mx-1 w-4 inline" />
