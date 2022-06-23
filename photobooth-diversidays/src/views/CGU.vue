@@ -1,6 +1,6 @@
 <template>
   <div class="container bg-custom-blue p-6">
-    <div class="overflow-y-auto h-4/6 bg-white p-4 m-4 rounded-lg text-bold">
+    <div class="overflow-y-auto h-4/6 bg-white p-4 m-4 rounded-lg font-bold">
       <h2 class="text-gray-900 text-xl lg:text-2xl font-semibold py-6">Politique de données & CGU</h2>
       <p>
         Ce document informe les Utilisateurs sur les technologies qui aident Diversidays (Unique) à atteindre les objectifs décrits ci-dessous. Ces technologies permettent au propriétaire d'accéder et de stocker des informations (par exemple en utilisant un cookie) ou d'utiliser des ressources (par exemple en exécutant un script) sur l'appareil d'un utilisateur lorsqu'il interagit avec la borne photo

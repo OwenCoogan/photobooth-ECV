@@ -32,6 +32,7 @@
   import Camera from '../components/SVG/Camera.vue'
   import ImageFramesCustomSVG from '../components/SVG/ImageFramesCustomSVG.vue'
   import Flashcode from '../components/UI/Flashcode.vue'
+import { onMounted } from '@vue/runtime-core'
 export default {
   components: {
     UniqueLogo,
@@ -42,7 +43,23 @@ export default {
   },
   data() {
     return {
-      image: localStorage.getItem("current_image")
+      image: localStorage.getItem("current_image"),
+      timer:30
+    }
+  },
+  mounted() {
+    console.log(this.timer)
+    this.startTimer()
+  },
+  methods: {
+    startTimer() {
+      setInterval(() => {
+        this.timer--
+        console.log(this.timer)
+        if (this.timer == 0) {
+          this.$router.push('/')
+        }
+      }, 1000)
     }
   }
 }
